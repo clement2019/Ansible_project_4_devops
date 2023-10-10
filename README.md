@@ -1,2 +1,2 @@
-# anasible_project
-This will help in managing resource creation in ansible
+# Ansible Projects for Devops
+This will help in managing resource creation uaing playbook for devops
