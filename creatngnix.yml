@@ -1,0 +1,17 @@
+----
+hosts: all
+become: true
+tasks:
+--name: update yum
+   yum:
+      sudo yum-get update
+
+ --name: install ngnix server on ubuntu
+   yum:
+      name: nginx
+      state: latest 
+
+  --name: start apache service
+    service:
+      ame: nginx
+      state: started 

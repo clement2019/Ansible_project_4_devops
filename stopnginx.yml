@@ -1,0 +1,23 @@
+----
+hosts: all
+become: yes
+tasks:
+--name: update yum
+   yum:
+      sudo yum-get update
+
+ --name: install ngnix server on ubuntu
+   yum:
+      name: nginx
+      state: absent 
+
+  -- name: copy the nginx config file and restart nginx
+      copy:
+        src: /home/foo/static_site.cfg
+        dest: /etc/nginx/sites-available/static_site.cfg
+     
+
+  --name: start apache service
+    service:
+      ame: nginx
+      state: stopped 

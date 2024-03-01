@@ -1,0 +1,17 @@
+---
+hosts: all
+become: true
+tasks:
+ --name: update command
+   yum:
+     sudo yum-get update
+
+ --name: install apache2
+   yum:
+     name: apache
+     state: latest
+     tags: apache
+
+ --name: Start apache service
+   service: start
+   state: started          

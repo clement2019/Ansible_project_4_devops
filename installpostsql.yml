@@ -1,0 +1,32 @@
+---
+hosts: all
+become: true
+tasks:
+ --name: Updating apt command
+   yum:
+     sudo apt-get update
+     
+ --name: install ngnix
+   yum:
+     name: nginx
+     state: latest
+     tags: nginx
+
+  --name: resstart ngnix
+    service: nginx
+    state: started
+
+  --name: install PostgreSQL
+    yum:
+      name: PostgreSQL
+      state: latest
+      tags: PostgreSQL
+
+  -name: restart PostgreSQL
+   service: postresql
+   state: started
+       
+
+
+
+
